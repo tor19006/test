@@ -24,11 +24,13 @@ self.addEventListener('activate', (e) => {
   );
 });
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        fetch(event.request).catch(function() {
-            // จัดการกับข้อผิดพลาด เช่น คืนค่าเป็น fallback response
-            return new Response('Failed to fetch the resource.');
-        })
-    );
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((res) => {
+      if (res) {
+        return res;
+      }
+      return fetch(e.request);
+    })
+  );
 });
