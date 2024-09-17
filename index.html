@@ -122,11 +122,12 @@
 
     // รับพารามิเตอร์จาก URL
     function getParams() {
-      let paramsObj = getAllUrlParams(window.location.href);
-      // หน้าแรก
-      let option = ('o' in paramsObj) ? paramsObj.o : 0;
-      return `?o=${option}&token=${paramsObj.token}`;
-    }
+  let paramsObj = getAllUrlParams(window.location.href);
+  // ตรวจสอบให้แน่ใจว่ามีการกำหนดค่า token อย่างถูกต้อง
+  let token = paramsObj.token || "defaultToken"; // กำหนดค่าเริ่มต้นหาก token ไม่ถูกกำหนด
+  let option = ('o' in paramsObj) ? paramsObj.o : 0;
+  return `?o=${option}&token=${token}`;
+}
 
       // ฟังก์ชันสำหรับโหลด iframe
     function onLoadIframe() {
