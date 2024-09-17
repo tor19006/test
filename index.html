@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOR's to do list ✅</title>
     <!-- ในส่วนนี้จะเพิ่มไฟล์ manifest แบบไดนามิก -->
-    <link rel="manifest" id="manifest">
+    <link rel="manifest" id="mydinamycmanifest">
     <link rel="shortcut icon" href="https://tor19006.github.io/test/todo icon.png" type="image/x-icon">
     <!-- แก้ไขปัญหาความสูงของ iframe -->
     <style type="text/css">
@@ -82,7 +82,7 @@
       const blob = new Blob([stringManifest], {type: 'application/json'});
       const manifestURL = URL.createObjectURL(blob);
       // อัพเดทแอตทริบิวต์ href ของ manifest
-      document.querySelector('#manifest').setAttribute('href', manifestURL);
+      document.querySelector('#mydinamycmanifest').setAttribute('href', manifestURL);
       // อัพเดท URL เว็บแอปใน iframe
       document.getElementById("iframe").src = `${webappUrl}${params}`;
     }
