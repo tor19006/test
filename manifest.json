@@ -1,0 +1,21 @@
+{
+  "name": "TOR's to do list",
+  "short_name": "TOR To Do",
+  "description": "แอปจัดการงานของ",
+  "start_url": "/AddEventForm.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d8cd7",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "todo icon/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "todo icon/png"
+    }
+  ]
+}
