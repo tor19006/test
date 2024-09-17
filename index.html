@@ -41,15 +41,21 @@
   </head>
 
   <body onload="onLoadPage()">
+    <!-- ย้ายสคริปต์ไปที่ head เพื่อให้ onLoadIframe ถูกประกาศก่อนใช้งาน -->
+    <script>
+        function onLoadIframe() {
+            setTimeout(() => {
+                loading.style = "display:none";
+                iframe.style = '';
+            }, 1000);
+        }
+    </script>
 
-    <!-- แสดงตัวโหลด -->
-    <div id="loading" class="loading">
-      <div class="spinner"></div>
-    </div>
-    
     <!-- iframe สำหรับโหลดเว็บแอปพลิเคชัน -->
     <iframe id="iframe" onload="onLoadIframe()" style="display:none" src="" frameborder="0"></iframe>
-  </body>
+
+    <!-- สคริปต์และเนื้อหาอื่น ๆ -->
+</body>
 
   <script>
 
