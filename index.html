@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;TOR's to do list ✅&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- ในส่วนนี้จะเพิ่มไฟล์ manifest แบบไดนามิก --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="manifest" id="mydinamycmanifest"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="shortcut icon" href="https://tor19006.github.io/test/assets/images/logo-light-icon.png" type="image/x-icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- แก้ไขปัญหาความสูงของ iframe --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style type="text/css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html, body, div, iframe { margin: 0; padding: 0; height: 100%; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>iframe { position: fixed; display: block; width: 100%; border: none; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.spinner {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border: 4px solid rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>width: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-left-color: #09f;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>animation: spin 1s ease infinite;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.loading {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>@keyframes spin {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>0% {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transform: rotate(0deg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>100% {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>transform: rotate(360deg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;body onload="onLoadPage()"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- แสดงตัวโหลด --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="loading" class="loading"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="spinner"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- iframe สำหรับโหลดเว็บแอปพลิเคชัน --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;iframe id="iframe" onload="onLoadIframe()" style="display:none" src="" frameborder="0"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// URL ของเว็บแอปพลิเคชัน<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const webappUrl = 'https://script.google.com/macros/s/AKfycbxJ0w8sJXbht8UmPGFUQLJpYbCtOnihpmWbaON_VUhCi0mbUbV0ANcuznfeBiinSjvI/exec';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// URL ของ PWA บน GitHub Pages</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const wpaUrl = 'https://tor19006.github.io/test';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// การกำหนดค่า manifest แบบไดนามิกเพื่อรวมพารามิเตอร์ที่มากับ URL</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let manifestJSON = {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"name": "TOR's to do list ✅",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"short_name": "TOR'ToDo",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"description": "ToDo List",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// "start_url": ค่านี้จะถูกกำหนดในฟังก์ชัน onPageLoad()</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"display": "standalone",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"icons": [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>{</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"src": "/test/todo icon.png",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"sizes": "256x256",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"type": "image/png"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>]</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// ฟังก์ชันที่จะถูกเรียกในการโหลดหน้า</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function onLoadPage() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let params = getParams();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>manifestJSON.start_url = `${wpaUrl}/${params}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const stringManifest = JSON.stringify(manifestJSON);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// สร้าง manifest แบบไดนามิก</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const blob = new Blob([stringManifest], {type: 'application/json'});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const manifestURL = URL.createObjectURL(blob);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// อัพเดทแอตทริบิวต์ href ของ manifest</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.querySelector('#mydinamycmanifest').setAttribute('href', manifestURL);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// อัพเดท URL เว็บแอปใน iframe</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("iframe").src = `${webappUrl}${params}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// รับพารามิเตอร์จาก URL</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function getParams() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let paramsObj = getAllUrlParams(window.location.href);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// หน้าแรก</p>
+<p class="p1"><span class="Apple-converted-space">      </span>let option = ('o' in paramsObj) ? paramsObj.o : 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return `?o=${option}&amp;token=${paramsObj.token}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// ฟังก์ชันสำหรับโหลด iframe</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function onLoadIframe() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>loading.style = "display:none";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>iframe.style = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// ฟังก์ชันสำหรับรับพารามิเตอร์จาก URL</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function getAllUrlParams(url) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var queryString = url ? url.split('?')[1] : window.location.search.slice(1);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var obj = {};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (queryString) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>queryString = queryString.split('#')[0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var arr = queryString.split('&amp;');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (var i = 0; i &lt; arr.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>var a = arr[i].split('=');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>var paramName = a[0];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>var paramValue = typeof (a[1]) === 'undefined' ? true : a[1];</p>
+<p class="p1"><span class="Apple-converted-space">          </span>if (paramName.match(/\[(\d+)?\]$/)) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var key = paramName.replace(/\[(\d+)?\]/, '');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!obj[key]) obj[key] = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (paramName.match(/\[\d+\]$/)) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>var index = /\[(\d+)\]/.exec(paramName)[1];</p>
+<p class="p1"><span class="Apple-converted-space">              </span>obj[key][index] = paramValue;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>obj[key].push(paramValue);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!obj[paramName]) {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>obj[paramName] = paramValue;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (obj[paramName] &amp;&amp; typeof obj[paramName] === 'string') {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>obj[paramName] = [obj[paramName]];</p>
+<p class="p1"><span class="Apple-converted-space">              </span>obj[paramName].push(paramValue);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">              </span>obj[paramName].push(paramValue);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return obj;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// การตั้งค่า Service Worker</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if ('serviceWorker' in navigator) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>navigator.serviceWorker</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.register('./sw.js')</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.then((reg) =&gt; console.log('ลงทะเบียน Service Worker สำเร็จ', reg))</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.catch((err) =&gt; console.error('เกิดข้อผิดพลาดในการลงทะเบียน Service Worker', err));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>console.log('ไม่มีการรองรับ serviceWorker');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
