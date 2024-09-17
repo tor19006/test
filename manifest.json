@@ -8,6 +8,11 @@
   "theme_color": "#1d8cd7",
   "icons": [
     {
+      "src": "/test/144x144-todo-icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
       "src": "/test/todo-icon.png",
       "sizes": "1024x1024",
       "type": "image/png"
