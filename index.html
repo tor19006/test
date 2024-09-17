@@ -46,6 +46,13 @@
     <div id="loading" class="loading">
       <div class="spinner"></div>
     </div>
+
+    function onLoadIframe() {
+            setTimeout(() => {
+                loading.style = "display:none";
+                iframe.style = '';
+            }, 1000);
+        }
     
     <!-- iframe สำหรับโหลดเว็บแอปพลิเคชัน -->
     <iframe id="iframe" onload="onLoadIframe()" style="display:none" src="" frameborder="0"></iframe>
