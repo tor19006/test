@@ -14,6 +14,12 @@
       "purpose": "any"
     },
     {
+      "src": "/test/256x256-todo-icon.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/test/todo-icon.png",
       "sizes": "1024x1024",
       "type": "image/png",
