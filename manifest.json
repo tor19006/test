@@ -10,24 +10,26 @@
     {
       "src": "/test/144x144-todo-icon.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/test/todo-icon.png",
       "sizes": "1024x1024",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
   ],
   "screenshots": [
     {
       "src": "/test/iphone-Screenshot.png",
       "sizes": "1170x2532",
-      "type": "image/png",
+      "type": "image/png"
     },
     {
       "src": "/test/ipad-Screenshot.png",
       "sizes": "1668x2388",
-      "type": "image/png",
+      "type": "image/png"
     },
   ]
 }
