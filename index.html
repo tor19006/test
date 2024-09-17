@@ -7,7 +7,7 @@
     <title>TOR's to do list ✅</title>
     <!-- ในส่วนนี้จะเพิ่มไฟล์ manifest แบบไดนามิก -->
     <link rel="manifest" id="mydinamycmanifest">
-    <link rel="shortcut icon" href="https://tor19006.github.io/test/todo icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://tor19006.github.io/test/todo-icon.png" type="image/x-icon">
     <!-- แก้ไขปัญหาความสูงของ iframe -->
     <style type="text/css">
       html, body, div, iframe { margin: 0; padding: 0; height: 100%; }
@@ -37,6 +37,17 @@
           transform: rotate(360deg);
         }
       }
+
+    <script>
+      // ฟังก์ชันสำหรับโหลด iframe
+    function onLoadIframe() {
+      setTimeout(() => {
+        loading.style = "display:none";
+        iframe.style = '';
+      }, 1000);
+    }
+    </script>
+      
     </style>
   </head>
 
@@ -66,7 +77,7 @@
       "display": "standalone",
       "icons": [
         {
-      "src": "/test/todo icon.png",
+      "src": "/test/todo-icon.png",
       "sizes": "1024x1024",
       "type": "image/png"
     },
@@ -93,14 +104,6 @@
       // หน้าแรก
       let option = ('o' in paramsObj) ? paramsObj.o : 0;
       return `?o=${option}&token=${paramsObj.token}`;
-    }
-
-    // ฟังก์ชันสำหรับโหลด iframe
-    function onLoadIframe() {
-      setTimeout(() => {
-        loading.style = "display:none";
-        iframe.style = '';
-      }, 1000);
     }
 
     // ฟังก์ชันสำหรับรับพารามิเตอร์จาก URL
