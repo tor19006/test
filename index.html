@@ -37,16 +37,6 @@
           transform: rotate(360deg);
         }
       }
-
-    <script>
-      // ฟังก์ชันสำหรับโหลด iframe
-    function onLoadIframe() {
-      setTimeout(() => {
-        loading.style = "display:none";
-        iframe.style = '';
-      }, 1000);
-    }
-    </script>
       
     </style>
   </head>
@@ -104,6 +94,14 @@
       // หน้าแรก
       let option = ('o' in paramsObj) ? paramsObj.o : 0;
       return `?o=${option}&token=${paramsObj.token}`;
+    }
+
+      // ฟังก์ชันสำหรับโหลด iframe
+    function onLoadIframe() {
+      setTimeout(() => {
+        loading.style = "display:none";
+        iframe.style = '';
+      }, 1000);
     }
 
     // ฟังก์ชันสำหรับรับพารามิเตอร์จาก URL
