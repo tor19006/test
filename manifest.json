@@ -8,7 +8,7 @@
   "theme_color": "#1d8cd7",
   "icons": [
     {
-      "src": "/test/todo icon.png",
+      "src": "/test/todo-icon.png",
       "sizes": "1024x1024",
       "type": "image/png"
     },
