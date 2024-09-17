@@ -9,13 +9,8 @@
   "icons": [
     {
       "src": "/test/todo icon.png",
-      "sizes": "192x192",
+      "sizes": "1024x1024",
       "type": "image/png"
     },
-    {
-      "src": "/test/todo icon.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
   ]
 }
