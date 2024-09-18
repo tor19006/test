@@ -43,6 +43,36 @@
   "type": "image/png",
   "purpose": "any"
 }
+    {
+  "src": "/test/120x120-todo-icon.png",
+  "sizes": "120x120",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/180x180-todo-icon.png",
+  "sizes": "180x180",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/152x152-todo-icon.png",
+  "sizes": "152x152",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/167x167-todo-icon.png",
+  "sizes": "167x167",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/76x76-todo-icon.png",
+  "sizes": "76x76",
+  "type": "image/png",
+  "purpose": "any"
+}
   ],
   "screenshots": [
     {
