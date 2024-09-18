@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOR's to do list ✅</title>
     <!-- ในส่วนนี้จะเพิ่มไฟล์ manifest แบบไดนามิก -->
     <link rel="manifest" id="mydinamycmanifest">
@@ -23,46 +23,35 @@
 <link rel="apple-touch-icon" sizes="167x167" href="https://tor19006.github.io/test/167x167-todo-icon.png">
     <!-- แก้ไขปัญหาความสูงของ iframe -->
     <style type="text/css">
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: auto; /* อนุญาตให้เลื่อนภายใน body */
-  }
+      html, body, div, iframe { margin: 0; padding: 0; height: 100%; }
+      iframe { position: fixed; display: block; width: 100%; border: none; }
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #09f;
+        animation: spin 1s ease infinite;
+      }
 
-  iframe {
-    display: block;
-    width: 100%;
-    height: 90vh; /* ปรับความสูงเพื่อให้มีพื้นที่สำหรับการเลื่อน */
-    border: none;
-  }
+      .loading {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 100vh;
+      }
 
-  .spinner {
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: #09f;
-    animation: spin 1s ease infinite;
-  }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
 
-  .loading {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 100vh;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
   </head>
 
   <body onload="onLoadPage()">
