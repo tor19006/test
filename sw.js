@@ -1,5 +1,6 @@
 const CACHE_NAME = 'EAD',
 urlsToCache = [
+  "https://script.google.com/macros/s/AKfycbxJ0w8sJXbht8UmPGFUQLJpYbCtOnihpmWbaON_VUhCi0mbUbV0ANcuznfeBiinSjvI/exec"
   './manifest.json'
 ];
 
