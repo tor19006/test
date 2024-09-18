@@ -8,17 +8,41 @@
   "theme_color": "#1d8cd7",
   "icons": [
     {
-      "src": "/test/144x144-todo-icon.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/test/256x256-todo-icon.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "any"
-    }
+  "src": "/test/144x144-todo-icon.png",
+  "sizes": "144x144",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/192x192-todo-icon.png",
+  "sizes": "192x192",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/256x256-todo-icon.png",
+  "sizes": "256x256",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/384x384-todo-icon.png",
+  "sizes": "384x384",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/512x512-todo-icon.png",
+  "sizes": "512x512",
+  "type": "image/png",
+  "purpose": "any"
+},
+{
+  "src": "/test/1024x1024-todo-icon.png",
+  "sizes": "1024x1024",
+  "type": "image/png",
+  "purpose": "any"
+}
   ],
   "screenshots": [
     {
