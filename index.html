@@ -101,22 +101,22 @@
 
 
     // ฟังก์ชันที่จะถูกเรียกในการโหลดหน้า
-    function onLoadPage() {
-  let params = getParams();
-  const webappUrl = 'https://script.google.com/macros/s/AKfycbxJ0w8sJXbht8UmPGFUQLJpYbCtOnihpmWbaON_VUhCi0mbUbV0ANcuznfeBiinSjvI/exec'; // ตรวจสอบว่า URL นี้ถูกต้อง
-  manifestJSON.start_url = `${wpaUrl}/${params}`;
-  const stringManifest = JSON.stringify(manifestJSON);
+function onLoadPage() {
+    let params = getParams();
+    manifestJSON.start_url = `${wpaUrl}/${params}`;
+    const stringManifest = JSON.stringify(manifestJSON);
   
-  // สร้าง manifest แบบไดนามิก
-  const blob = new Blob([stringManifest], {type: 'application/json'});
-  const manifestURL = URL.createObjectURL(blob);
+    // สร้าง manifest แบบไดนามิก
+    const blob = new Blob([stringManifest], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(blob);
   
-  // อัพเดทแอตทริบิวต์ href ของ manifest
-  document.querySelector('#mydinamycmanifest').setAttribute('href', manifestURL);
+    // อัพเดทแอตทริบิวต์ href ของ manifest
+    document.querySelector('#mydinamycmanifest').setAttribute('href', manifestURL);
   
-  // อัพเดท URL เว็บแอปใน iframe
-  document.getElementById("iframe").src = `${webappUrl}${params}`;
+    // อัพเดท URL เว็บแอปใน iframe
+    document.getElementById("iframe").src = `${webappUrl}${params}`;
 }
+
 
     // รับพารามิเตอร์จาก URL
     function getParams() {
