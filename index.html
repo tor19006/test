@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TOR's to do list ✅</title>
     <!-- ในส่วนนี้จะเพิ่มไฟล์ manifest แบบไดนามิก -->
     <link rel="manifest" id="mydinamycmanifest">
@@ -17,10 +17,11 @@
     <link rel="shortcut icon" href="https://tor19006.github.io/test/512x512-todo-icon.png" sizes="512x512" type="image/png">
 
     <link rel="apple-touch-icon" sizes="120x120" href="https://tor19006.github.io/test/120x120-todo-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://tor19006.github.io/test/180x180-todo-icon.png">
-<link rel="apple-touch-icon" sizes="76x76" href="https://tor19006.github.io/test/76x76-todo-icon.png">
-<link rel="apple-touch-icon" sizes="152x152" href="https://tor19006.github.io/test/152x152-todo-icon.png">
-<link rel="apple-touch-icon" sizes="167x167" href="https://tor19006.github.io/test/167x167-todo-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tor19006.github.io/test/180x180-todo-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://tor19006.github.io/test/76x76-todo-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tor19006.github.io/test/152x152-todo-icon.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://tor19006.github.io/test/167x167-todo-icon.png">
+
     <!-- แก้ไขปัญหาความสูงของ iframe -->
     <style type="text/css">
       html, body, div, iframe { margin: 0; padding: 0; height: 100%; }
@@ -51,6 +52,10 @@
         }
       }
       
+      /* ป้องกันการเลื่อนเมื่อแสดงหน้า loading */
+      body.loading-active {
+          overflow: hidden;
+      }
     </style>
   </head>
 
@@ -66,140 +71,31 @@
   </body>
 
   <script>
-
-    // URL ของเว็บแอปพลิเคชัน 
-    const webappUrl = 'https://script.google.com/macros/s/AKfycbxJ0w8sJXbht8UmPGFUQLJpYbCtOnihpmWbaON_VUhCi0mbUbV0ANcuznfeBiinSjvI/exec';
-    // URL ของ PWA บน GitHub Pages
-    const wpaUrl = 'https://tor19006.github.io/test';
-    // การกำหนดค่า manifest แบบไดนามิกเพื่อรวมพารามิเตอร์ที่มากับ URL
-    let manifestJSON = {
-      "name": "TOR's to do list ✅",
-      "short_name": "TOR'ToDo",
-      "description": "ToDo List",
-      // "start_url": ค่านี้จะถูกกำหนดในฟังก์ชัน onPageLoad()
-      "display": "standalone",
-      "icons": [
-    {
-  "src": "/test/144x144-todo-icon.png",
-  "sizes": "144x144",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/192x192-todo-icon.png",
-  "sizes": "192x192",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/256x256-todo-icon.png",
-  "sizes": "256x256",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/384x384-todo-icon.png",
-  "sizes": "384x384",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/512x512-todo-icon.png",
-  "sizes": "512x512",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/1024x1024-todo-icon.png",
-  "sizes": "1024x1024",
-  "type": "image/png",
-  "purpose": "any"
-},
-        {
-  "src": "/test/120x120-todo-icon.png",
-  "sizes": "120x120",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/180x180-todo-icon.png",
-  "sizes": "180x180",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/152x152-todo-icon.png",
-  "sizes": "152x152",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/167x167-todo-icon.png",
-  "sizes": "167x167",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/test/76x76-todo-icon.png",
-  "sizes": "76x76",
-  "type": "image/png",
-  "purpose": "any"
-}
-  ],
-  "screenshots": [
-    {
-      "src": "/test/iphone-Screenshot.png",
-      "sizes": "1170x2532",
-      "type": "image/png"
-    },
-    {
-      "src": "/test/ipad-Screenshot.png",
-      "sizes": "1668x2388",
-      "type": "image/png"
-    },
-    {
-      "src": "/test/mac-Screenshot.png",
-      "sizes": "2880x1800",
-      "type": "image/png",
-      "form_factor": "wide"
-    }
-  ]
-}
-
-
     // ฟังก์ชันที่จะถูกเรียกในการโหลดหน้า
-function onLoadPage() {
-    let params = getParams();
-    manifestJSON.start_url = `${wpaUrl}/${params}`;
-    const stringManifest = JSON.stringify(manifestJSON);
-  
-    // สร้าง manifest แบบไดนามิก
-    const blob = new Blob([stringManifest], {type: 'application/json'});
-    const manifestURL = URL.createObjectURL(blob);
-  
-    // อัพเดทแอตทริบิวต์ href ของ manifest
-    document.querySelector('#mydinamycmanifest').setAttribute('href', manifestURL);
-  
-    // อัพเดท URL เว็บแอปใน iframe
-    document.getElementById("iframe").src = `${webappUrl}${params}`;
-}
+    function onLoadPage() {
+        document.body.classList.add('loading-active'); // ป้องกันการเลื่อน
+        let params = getParams();
+        manifestJSON.start_url = `${wpaUrl}/${params}`;
+        const stringManifest = JSON.stringify(manifestJSON);
+      
+        // สร้าง manifest แบบไดนามิก
+        const blob = new Blob([stringManifest], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(blob);
+      
+        // อัพเดทแอตทริบิวต์ href ของ manifest
+        document.querySelector('#mydinamycmanifest').setAttribute('href', manifestURL);
+      
+        // อัพเดท URL เว็บแอปใน iframe
+        document.getElementById("iframe").src = `${webappUrl}${params}`;
+    }
 
-
-    // รับพารามิเตอร์จาก URL
-    function getParams() {
-  let paramsObj = getAllUrlParams(window.location.href);
-  // ตรวจสอบให้แน่ใจว่ามีการกำหนดค่า token อย่างถูกต้อง
-  let token = paramsObj.token || "defaultToken"; // กำหนดค่าเริ่มต้นหาก token ไม่ถูกกำหนด
-  let option = ('o' in paramsObj) ? paramsObj.o : 0;
-  return `?o=${option}&token=${token}`;
-}
-
-      // ฟังก์ชันสำหรับโหลด iframe
+    // ฟังก์ชันสำหรับโหลด iframe
     function onLoadIframe() {
-      setTimeout(() => {
-        loading.style = "display:none";
-        iframe.style = '';
-      }, 1000);
+        setTimeout(() => {
+            document.body.classList.remove('loading-active'); // อนุญาตการเลื่อนเมื่อโหลดเสร็จ
+            loading.style = "display:none";
+            iframe.style = '';
+        }, 1000);
     }
 
     // ฟังก์ชันสำหรับรับพารามิเตอร์จาก URL
@@ -236,7 +132,6 @@ function onLoadPage() {
       }
       return obj;
     }
-
   </script>
 
   <script>
