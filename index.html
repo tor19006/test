@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>TOR's to do list ✅</title>
     <!-- ในส่วนนี้จะเพิ่มไฟล์ manifest แบบไดนามิก -->
     <link rel="manifest" id="mydinamycmanifest">
@@ -65,13 +65,6 @@
     <iframe id="iframe" onload="onLoadIframe()" style="display:none" src="" frameborder="0"></iframe>
   </body>
 
-<style>
-  /* ปรับเนื้อหาให้เลื่อนลงได้ */
-  #content {
-    overflow: auto;
-  }
-</style>
-  
   <script>
 
     // URL ของเว็บแอปพลิเคชัน 
@@ -243,43 +236,6 @@ function onLoadPage() {
       }
       return obj;
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-  let startY = 0;
-  let endY = 0;
-  let refreshThreshold = 100; // จำนวนพิกเซลที่ต้องเลื่อนลงก่อนที่จะรีเฟรช
-
-  // เริ่มต้นการจับตำแหน่งการสัมผัส
-  document.addEventListener('touchstart', (e) => {
-    startY = e.touches[0].clientY;
-  });
-
-  // จับตำแหน่งการเลื่อน
-  document.addEventListener('touchmove', (e) => {
-    endY = e.touches[0].clientY;
-
-    // ตรวจสอบว่าผู้ใช้เลื่อนถึงด้านบนสุดและเลื่อนลงเกิน threshold
-    if (window.scrollY === 0 && (endY - startY) > refreshThreshold) {
-      // เรียกฟังก์ชันรีเฟรช
-      refreshPage();
-    }
-  });
-});
-
-// ฟังก์ชันรีเฟรช
-function refreshPage() {
-  // แสดงตัวโหลดหรือทำอย่างอื่นที่ต้องการก่อนการรีเฟรช
-  document.getElementById("loading").style.display = "flex";
-  
-  // ตัวอย่างการรีเฟรชเนื้อหาโดยการโหลด iframe ใหม่
-  setTimeout(() => {
-    // ซ่อนตัวโหลดเมื่อรีเฟรชเสร็จ
-    document.getElementById("loading").style.display = "none";
-    
-    // โหลดเนื้อหาใหม่หรือรีเฟรช iframe
-    document.getElementById("iframe").src = document.getElementById("iframe").src;
-  }, 1000);
-}
 
   </script>
 
